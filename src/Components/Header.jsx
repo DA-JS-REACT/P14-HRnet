@@ -2,9 +2,13 @@ import React from 'react'
 import logo from '@/Assets/logo.png'
 import { Link, useLocation } from 'react-router-dom'
 
+/**
+ * Header  to the app
+ * @returns  {React.ReactElement}
+ */
 export function Header() {
     const location = useLocation()
-    console.log(location)
+
     return (
         <div className="Header">
             <div className="Header-contain">

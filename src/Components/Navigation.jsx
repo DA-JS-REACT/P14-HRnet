@@ -3,7 +3,10 @@ import { Route, Routes } from 'react-router-dom'
 import { Employees } from '@/Pages/Employees'
 import { Home } from '@/Pages/Home'
 import { Layout } from '@/Components/Layout'
-
+/**
+ * Contains all route to the app
+ * @returns  {React.ReactElement}
+ */
 export function Navigation() {
     return (
         <Routes>

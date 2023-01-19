@@ -1,0 +1,31 @@
+.form {
+    width: 70%;
+    margin: 0 auto;
+    &-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        .form-label {
+            font-size: 1.5em;
+            margin: 5px 0;
+        }
+        .form-control {
+            margin: 5px 0;
+            background-color: $backround-color;
+        }
+        .text-danger {
+            color: red;
+        }
+        &-address {
+            border: 1px solid black;
+            padding: 5px 10px 0px;
+            & legend {
+                font-size: 1.5em;
+            }
+        }
+        &--btn {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+}

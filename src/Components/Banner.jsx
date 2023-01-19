@@ -1,5 +1,9 @@
 import React from 'react'
 
+/**
+ * Banner that contains title of home page
+ * @returns  {React.ReactElement}
+ */
 export function Banner() {
     return (
         <section className="Banner">

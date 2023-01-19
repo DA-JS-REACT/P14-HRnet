@@ -2,8 +2,11 @@
 @import './Utils/variables';
 @import './Base/base';
 
+@import './Components/btn';
+
 @import './Layout/layout';
 @import './Layout/header';
 @import './Layout/banner';
+@import './Layout/form';
 
 @import './Pages/home';
