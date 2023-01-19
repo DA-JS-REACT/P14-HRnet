@@ -1,0 +1,44 @@
+.Header {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    &-contain {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .contain-title,
+        .contain-logo,
+        .contain-link {
+            width: 33%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contain-title {
+            .title {
+                font-size: 4rem;
+                font-weight: 700;
+            }
+        }
+        .contain-logo {
+            .logo {
+                width: 80px;
+                height: auto;
+            }
+        }
+        .contain-link {
+            .link {
+                font-size: 1.5em;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-ligne {
+        margin-top: 10px;
+        .ligne {
+            width: 300px;
+            color: grey;
+        }
+    }
+}

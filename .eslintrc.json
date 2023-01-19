@@ -18,7 +18,8 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint","prettier"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
         "prettier/prettier": [
