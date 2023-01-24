@@ -38,6 +38,6 @@ export function FieldCustom({ label, name, type }) {
 
 FieldCustom.propTypes = {
     label: PropTypes.string,
-    name: PropTypes.string,
-    type: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
 }
