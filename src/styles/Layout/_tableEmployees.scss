@@ -1,0 +1,35 @@
+.table-wrapper,
+.table {
+    margin: 30px auto;
+    border: 1px solid lighten($grey, 25%);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 2px lighten($grey, 25%);
+}
+
+.table-wrapper {
+    width: 90%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    .table-header,
+    .table-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    .table-footer {
+        .footer-pagination {
+            display: flex;
+        }
+        .footer-pagination p {
+            border: 1px solid lighten($grey, 15%);
+            background-color: $grey-light;
+            padding: 5px;
+            margin: 0 8px;
+        }
+    }
+}
+
+.table {
+    width: 100%;
+}

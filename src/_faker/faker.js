@@ -22,7 +22,7 @@ export function getFakeData() {
         const randomCity = faker.address.cityName()
         const randomState = faker.address.state()
         const randomZipCode = faker.address.zipCode()
-
+        // use data  to the form Register
         const randomDepartment =
             departmentField[random(0, departmentField.length - 1)].name
         data.push({

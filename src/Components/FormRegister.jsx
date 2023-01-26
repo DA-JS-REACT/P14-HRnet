@@ -2,7 +2,8 @@ import React from 'react'
 import { Formik, Form } from 'formik'
 import { validationSchema } from '@/_services/validation'
 import { FieldCustom } from './FieldCustom'
-import { SelectCustom } from './SelectCustom'
+import { SelectState } from './SelectState'
+import { SelectDepartment } from './SelectDepartment'
 
 export function FormRegister() {
     const initialValues = {
@@ -56,7 +57,8 @@ export function FormRegister() {
                         <FieldCustom label="Street" name="street" type="text" />
 
                         <FieldCustom label="City" name="city" type="text" />
-                        <SelectCustom label="State" name="state" />
+
+                        <SelectState />
 
                         <FieldCustom
                             label="Zip Code"
@@ -64,7 +66,7 @@ export function FormRegister() {
                             type="number"
                         />
                     </fieldset>
-                    <SelectCustom label="Department" name="department" />
+                    <SelectDepartment />
 
                     <div className="form-group form-group--btn">
                         <button type="submit" className="btn btn-primary">
