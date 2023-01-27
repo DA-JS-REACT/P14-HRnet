@@ -1,0 +1,23 @@
+.loader {
+    padding: 100px;
+    border: 6px solid rgba(64, 64, 241, 0.466);
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 31%;
+    left: 43%;
+    // transform: translate(-40%, -40%);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

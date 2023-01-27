@@ -5,6 +5,8 @@ import { getEmployees } from '@/_services/employees.action'
 import { selectEmployees } from '@/_helpers/selectors'
 import { CurrentTable } from '../Components/CurrentTable'
 import { isEmpty } from '../_helpers/Empty'
+import { Error } from '../Components/Error'
+import { Loader } from '../Components/Loader'
 
 /**
  * Employees Page
@@ -15,7 +17,7 @@ export function Employees() {
     const employees = useSelector(selectEmployees)
     const flag = useRef(false)
     if (!isEmpty(employees)) {
-        console.log(employees.employeesInfo)
+        console.log('employees', employees)
     }
 
     useEffect(() => {
@@ -26,10 +28,12 @@ export function Employees() {
     }, [])
     return (
         <section className="Employees">
-            {!isEmpty(employees.employeesInfo) ? (
+            {!isEmpty(employees) && employees.loading ? (
+                <Loader />
+            ) : !isEmpty(employees.employeesInfo) ? (
                 <CurrentTable nodes={employees.employeesInfo} />
             ) : (
-                ''
+                <Error status="500" message={employees.error.error.message} />
             )}
         </section>
     )

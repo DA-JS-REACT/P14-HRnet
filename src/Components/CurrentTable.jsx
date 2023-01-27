@@ -11,28 +11,26 @@ import {
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 
 import PropTypes from 'prop-types'
-
-// const nodes = [
-//     {
-//         id: '0',
-//         name: 'Shopping List',
-//         deadline: new Date(2020, 1, 15),
-//         type: 'TASK',
-//         isComplete: true,
-//         nodes: 3,
-//     },
-// ]
-
+import { DefaultChevron } from './DefaultChevron'
+/**
+ * Table dor display current employees
+ * @prop {array} nodes - data which receive  to the server
+ * @returns {React.ReactElement}
+ */
 export function CurrentTable({ nodes }) {
     const [search, setSearch] = useState('')
     const theme = useTheme([
         getTheme(),
         {
-            BaseCell: `
-            text-align: center;
+            HeaderCell: `
+            display:flex;
+            flex-direction: column;
+
             `,
+
             Cell: `
             padding:8px 16px;
+            text-align:center;
           `,
             HeaderRow: `
             font-weight: bold;
@@ -55,12 +53,31 @@ export function CurrentTable({ nodes }) {
     const handleSearch = (event) => {
         setSearch(event.target.value)
     }
+
+    // Initialize Data  with function search
     const data = {
-        nodes: nodes.filter((item) =>
-            item.lastName.toLowerCase().includes(search.toLowerCase())
+        nodes: nodes.filter(
+            (item) =>
+                item.lastName.toLowerCase().includes(search.toLowerCase()) ||
+                item.firstName.toLowerCase().includes(search.toLowerCase()) ||
+                item.department.toLowerCase().includes(search.toLowerCase()) ||
+                item.address.city
+                    .toLowerCase()
+                    .includes(search.toLowerCase()) ||
+                item.address.street
+                    .toLowerCase()
+                    .includes(search.toLowerCase()) ||
+                item.address.state
+                    .toLowerCase()
+                    .includes(search.toLowerCase()) ||
+                item.address.zipCode
+                    .toLowerCase()
+                    .includes(search.toLowerCase()) ||
+                new Date(item.startdate).getFullYear() == search ||
+                new Date(item.birthdate).getFullYear() == search
         ),
     }
-
+    // for pagniation
     const pagination = usePagination(data, {
         state: {
             page: 0,
@@ -68,11 +85,16 @@ export function CurrentTable({ nodes }) {
         },
         onChange: onPaginationChange,
     })
+
+    // config to display the number of items per page
     const sizes = [10, 20, 50]
 
+    // ? may be util or not
     function onPaginationChange(action, state) {
         console.log(action, state)
     }
+
+    // config function to sort columns
     const sort = useSort(
         data,
         {
@@ -80,9 +102,9 @@ export function CurrentTable({ nodes }) {
         },
         {
             sortIcon: {
-                iconDefault: null,
-                iconUp: <FaChevronUp />,
-                iconDown: <FaChevronDown />,
+                iconDefault: <DefaultChevron />,
+                iconUp: <FaChevronUp fontSize={'small'} />,
+                iconDown: <FaChevronDown fontSize={'small'} />,
             },
             sortToggleType: SortToggleType.AlternateWithReset,
             sortFns: {
@@ -92,16 +114,51 @@ export function CurrentTable({ nodes }) {
                     ),
                 LASTNAME: (array) =>
                     array.sort((a, b) => a.lastName.localeCompare(b.lastName)),
+                STARTDATE: (array) =>
+                    array.sort(
+                        (a, b) =>
+                            new Date(a.startdate).getTime() -
+                            new Date(b.startdate).getTime()
+                    ),
+                DATEOFBIRTH: (array) =>
+                    array.sort(
+                        (a, b) =>
+                            new Date(a.birthdate).getTime() -
+                            new Date(b.birthdate).getTime()
+                    ),
                 DEPARTMENT: (array) =>
                     array.sort((a, b) =>
                         a.department.localeCompare(b.department)
                     ),
+                STREET: (array) =>
+                    array.sort((a, b) =>
+                        a.address.street.localeCompare(b.address.street)
+                    ),
+                CITY: (array) =>
+                    array.sort((a, b) =>
+                        a.address.city.localeCompare(b.address.city)
+                    ),
+                STATE: (array) =>
+                    array.sort((a, b) =>
+                        a.address.state.localeCompare(b.address.state)
+                    ),
+                ZIPCODE: (array) =>
+                    array.sort((a, b) => {
+                        const max = a.address.zipCode.split('-')
+                        const min = b.address.zipCode.split('-')
+
+                        return max[0] - min[0]
+                    }),
             },
         }
     )
+
+    // ? may be util or not
     function onSortChange(action, state) {
         console.log(action, state)
     }
+
+    // Config  for display
     const COLUMNS = [
         {
             label: 'First Name',
@@ -116,6 +173,7 @@ export function CurrentTable({ nodes }) {
         {
             label: 'Start Date',
             renderCell: (item) => item.startdate,
+            sort: { sortKey: 'STARTDATE' },
         },
         {
             label: 'Department',
@@ -125,22 +183,27 @@ export function CurrentTable({ nodes }) {
         {
             label: 'Date of birth',
             renderCell: (item) => item.birthdate,
+            sort: { sortKey: 'DATEOFBIRTH' },
         },
         {
             label: 'Street',
             renderCell: (item) => item.address.street,
+            sort: { sortKey: 'STREET' },
         },
         {
             label: 'City',
             renderCell: (item) => item.address.city,
+            sort: { sortKey: 'CITY' },
         },
         {
             label: 'State',
             renderCell: (item) => item.address.state,
+            sort: { sortKey: 'STATE' },
         },
         {
             label: 'Zip Code',
             renderCell: (item) => item.address.zipCode,
+            sort: { sortKey: 'ZIPCODE' },
         },
     ]
 
@@ -170,7 +233,7 @@ export function CurrentTable({ nodes }) {
                 </div>
 
                 <div className="header-search">
-                    <label htmlFor="search">Search by Last Name:</label>
+                    <label htmlFor="search">Search:</label>
                     <input
                         id="search"
                         type="text"
@@ -188,29 +251,17 @@ export function CurrentTable({ nodes }) {
             />
             <br />
             <div className="table-footer">
-                <span>
-                    Total Pages: {pagination.state.getTotalPages(data.nodes)}{' '}
-                    nombre: {data.nodes.length}
-                </span>
-                {/* 
-                <span>
-                    Page:{' '}
-                    {pagination.state.getPages(data.nodes).map((_, index) => (
-                        <button
-                            key={index}
-                            type="button"
-                            style={{
-                                fontWeight:
-                                    pagination.state.page === index
-                                        ? 'bold'
-                                        : 'normal',
-                            }}
-                            onClick={() => pagination.fns.onSetPage(index)}
-                        >
-                            {index + 1}
-                        </button>
-                    ))}
-                </span> */}
+                <div className="footer-info">
+                    <span>
+                        Total Pages:{' '}
+                        {pagination.state.getTotalPages(data.nodes)}
+                    </span>
+                    <span>
+                        showing :{pagination.state.size} of {data.nodes.length}{' '}
+                        entries
+                    </span>
+                </div>
+
                 <div className="footer-pagination">
                     <button
                         type="button"

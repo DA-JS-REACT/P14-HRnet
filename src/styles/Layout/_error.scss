@@ -1,0 +1,27 @@
+.error {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-title,
+    &-message {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+    &-title h1 {
+        font-size: 5rem;
+    }
+    &-message {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    &-message p {
+        font-size: 2rem;
+        padding: 5px;
+    }
+}

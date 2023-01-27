@@ -17,7 +17,15 @@
         display: flex;
         justify-content: space-between;
     }
+    .table-header label {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
     .table-footer {
+        .footer-info > span {
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
         .footer-pagination {
             display: flex;
         }

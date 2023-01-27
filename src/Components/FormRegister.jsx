@@ -4,21 +4,27 @@ import { validationSchema } from '@/_services/validation'
 import { FieldCustom } from './FieldCustom'
 import { SelectState } from './SelectState'
 import { SelectDepartment } from './SelectDepartment'
+import { useDispatch } from 'react-redux'
+import { employeesRegister } from '@/_services/employees.action'
 
 export function FormRegister() {
+    const dispatch = useDispatch()
     const initialValues = {
         firstName: '',
         lastName: '',
-        birthDate: '',
-        startDate: '',
-        street: '',
-        city: '',
-        state: '',
-        zipCode: '',
+        birthdate: '',
+        startdate: '',
+        address: {
+            street: '',
+            city: '',
+            state: '',
+            zipCode: '',
+        },
         department: '',
     }
     const handleSubmit = (values) => {
         console.log(values)
+        dispatch(employeesRegister(values))
     }
     return (
         <Formik
@@ -42,19 +48,23 @@ export function FormRegister() {
 
                     <FieldCustom
                         label="Date of Birth"
-                        name="birthDate"
+                        name="birthdate"
                         type="date"
                     />
 
                     <FieldCustom
                         label="Start Date"
-                        name="startDate"
+                        name="startdate"
                         type="date"
                     />
 
                     <fieldset className="form-group-address">
                         <legend>Address</legend>
-                        <FieldCustom label="Street" name="street" type="text" />
+                        <FieldCustom
+                            label="Street"
+                            name="address.street"
+                            type="text"
+                        />
 
                         <FieldCustom label="City" name="city" type="text" />
 
