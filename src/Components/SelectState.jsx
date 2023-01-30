@@ -6,5 +6,7 @@ import { SelectCustom } from './SelectCustom'
  * @returns {React.ReactElement}
  */
 export function SelectState() {
-    return <SelectCustom label="State" name="state" data={statesField} />
+    return (
+        <SelectCustom label="State" name="address.state" data={statesField} />
+    )
 }

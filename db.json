@@ -153,6 +153,20 @@
                 "zipCode": "85019-4364"
             },
             "id": 11
+        },
+        {
+            "firstName": "fred",
+            "lastName": "fred",
+            "birthdate": "2010-12-20",
+            "startdate": "2022-03-08",
+            "address": {
+                "street": "street",
+                "city": "chicago",
+                "state": "Indiana",
+                "zipCode": "12345"
+            },
+            "department": "Ressources",
+            "id": 12
         }
     ]
 }

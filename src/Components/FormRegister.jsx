@@ -66,14 +66,18 @@ export function FormRegister() {
                             type="text"
                         />
 
-                        <FieldCustom label="City" name="city" type="text" />
+                        <FieldCustom
+                            label="City"
+                            name="address.city"
+                            type="text"
+                        />
 
                         <SelectState />
 
                         <FieldCustom
                             label="Zip Code"
-                            name="zipCode"
-                            type="number"
+                            name="address.zipCode"
+                            type="string"
                         />
                     </fieldset>
                     <SelectDepartment />
