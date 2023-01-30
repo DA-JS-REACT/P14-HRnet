@@ -6,6 +6,7 @@ import { SelectState } from './SelectState'
 import { SelectDepartment } from './SelectDepartment'
 import { useDispatch } from 'react-redux'
 import { employeesRegister } from '@/_services/employees.action'
+import { MyDatePicker } from './MyDatePicker'
 
 export function FormRegister() {
     const dispatch = useDispatch()
@@ -46,17 +47,9 @@ export function FormRegister() {
                         type="text"
                     />
 
-                    <FieldCustom
-                        label="Date of Birth"
-                        name="birthdate"
-                        type="date"
-                    />
+                    <MyDatePicker label="Date of Birth" name="birthdate" />
 
-                    <FieldCustom
-                        label="Start Date"
-                        name="startdate"
-                        type="date"
-                    />
+                    <MyDatePicker label="Start Date" name="startdate" />
 
                     <fieldset className="form-group-address">
                         <legend>Address</legend>
