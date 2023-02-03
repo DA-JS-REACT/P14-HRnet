@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 
 export function MyDatePicker({ label, name }) {
-    const [field, meta, helpers] = useField(name)
+    const [field, _meta, helpers] = useField(name)
     const [selected, setSelected] = useState(null)
 
-    const { value } = meta
+    // const { value } = meta
     const { setValue } = helpers
     const formatDate = (date) => {
         return date.toLocaleDateString('en-US')
