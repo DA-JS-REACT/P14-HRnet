@@ -12,6 +12,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 
 import PropTypes from 'prop-types'
 import { DefaultChevron } from './DefaultChevron'
+import { isEmpty } from '../_helpers/Empty'
 /**
  * Table dor display current employees
  * @prop {array} nodes - data which receive  to the server
@@ -31,6 +32,7 @@ export function CurrentTable({ nodes }) {
             Cell: `
             padding:8px 16px;
             text-align:center;
+            color:black;
           `,
             HeaderRow: `
             font-weight: bold;
@@ -39,7 +41,7 @@ export function CurrentTable({ nodes }) {
         `,
             Row: `
           &:nth-of-type(odd) {
-            background-color: rgba(175, 168, 168, 0.123);
+            background-color: #f2f5e2;
           }
           &:nth-of-type(even) {
             background-color: white;
@@ -290,6 +292,39 @@ export function CurrentTable({ nodes }) {
         </div>
     )
 }
+
+CurrentTable.defaultProps = {
+    nodes: [
+        {
+            firstName: '',
+            lastName: '',
+            birthdate: '',
+            startdate: '',
+            address: {
+                street: '',
+                city: '',
+                state: '',
+                zipCode: '',
+            },
+            department: '',
+        },
+    ],
+}
 CurrentTable.propTypes = {
-    nodes: PropTypes.array.isRequired,
+    nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+            firstName: PropTypes.string,
+            lastName: PropTypes.string,
+            birthdate: PropTypes.string,
+            startdate: PropTypes.string,
+            address: PropTypes.shape({
+                street: PropTypes.string,
+                city: PropTypes.string,
+                state: PropTypes.string,
+                zipCode: PropTypes.string,
+            }),
+
+            department: PropTypes.string,
+        })
+    ).isRequired,
 }

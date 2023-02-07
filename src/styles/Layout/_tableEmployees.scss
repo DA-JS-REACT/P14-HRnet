@@ -4,7 +4,11 @@
     border: 1px solid lighten($grey, 25%);
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 2px 2px lighten($grey, 25%);
+    box-shadow: 5px 2px rgba(0, 0, 0, 0.041);
+    background-color: $color-logo;
+}
+.table {
+    background-color: $color-4;
 }
 
 .table-wrapper {
@@ -21,19 +25,30 @@
         font-size: 1rem;
         margin-right: 5px;
     }
+    #itemSize {
+        background: $color-4;
+    }
+    .header-search input {
+        border-radius: 10px;
+        padding: 5px;
+    }
     .table-footer {
         .footer-info > span {
-            font-size: 0.8rem;
+            font-size: 1rem;
             margin-right: 5px;
         }
         .footer-pagination {
             display: flex;
         }
-        .footer-pagination p {
-            border: 1px solid lighten($grey, 15%);
-            background-color: $grey-light;
+        .footer-pagination > p {
+            border: 1px solid $color-4;
+            background-color: $color-4;
             padding: 5px;
             margin: 0 8px;
+        }
+        .footer-pagination > button {
+            background-color: $color-4;
+            border-radius: 5px;
         }
     }
 }

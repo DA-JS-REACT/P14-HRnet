@@ -1,9 +1,12 @@
 import React from 'react'
+import logo from '@/Assets/logo.png'
 
 export function Footer() {
     return (
-        <div className="Footer">
-            <h3>footer</h3>
-        </div>
+        <footer className="Footer">
+            <section>
+                <img className="logo" src={logo} alt="logo Wealth Health" />
+            </section>
+        </footer>
     )
 }

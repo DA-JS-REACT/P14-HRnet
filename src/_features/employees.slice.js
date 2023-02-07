@@ -31,24 +31,24 @@ export const employeesSlice = createSlice({
                 state.error = null
             })
             .addCase(employeesRegister.fulfilled, (state, action) => {
-                console.log(action)
                 state.loading = false
                 state.error = null
-                state.employeesInfo = {
+                state.employeesInfo = [
                     ...state.employeesInfo,
-                    firstName: action.payload.firstName,
-                    lastName: action.payload.lastName,
-                    birthdate: action.payload.birthdate,
-                    startdate: action.payload.startdate,
-                    ...state.employeesInfo.address,
-                    address: {
-                        street: action.payload.address.street,
-                        city: action.payload.address.city,
-                        state: action.payload.address.state,
-                        zipCode: action.payload.address.zipCode,
+                    {
+                        firstName: action.payload.firstName,
+                        lastName: action.payload.lastName,
+                        birthdate: action.payload.birthdate,
+                        startdate: action.payload.startdate,
+                        address: {
+                            street: action.payload.address.street,
+                            city: action.payload.address.city,
+                            state: action.payload.address.state,
+                            zipCode: action.payload.address.zipCode,
+                        },
+                        department: action.payload.department,
                     },
-                    department: action.payload.department,
-                }
+                ]
             })
             .addCase(employeesRegister.rejected, (state, payload) => {
                 state.loading = false

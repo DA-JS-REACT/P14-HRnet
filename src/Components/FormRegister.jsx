@@ -7,8 +7,10 @@ import { SelectDepartment } from './SelectDepartment'
 import { useDispatch } from 'react-redux'
 import { employeesRegister } from '@/_services/employees.action'
 import { MyDatePicker } from './MyDatePicker'
+import { Modal, useModal } from '@fredmagione/modals-react-components'
 
 export function FormRegister() {
+    const { isShowing, toggle } = useModal()
     const dispatch = useDispatch()
     const initialValues = {
         firstName: '',
@@ -23,15 +25,18 @@ export function FormRegister() {
         },
         department: '',
     }
-    const handleSubmit = (values) => {
-        console.log(values)
+    const handleSubmit = (values, { resetForm }) => {
         dispatch(employeesRegister(values))
+        resetForm()
+        toggle()
     }
     return (
         <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={(values) => handleSubmit(values)}
+            onSubmit={(values, { resetForm }) =>
+                handleSubmit(values, { resetForm })
+            }
         >
             {({ resetForm }) => (
                 <Form className="form">
@@ -76,17 +81,23 @@ export function FormRegister() {
                     <SelectDepartment />
 
                     <div className="form-group form-group--btn">
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-save">
                             Save
                         </button>
                         <button
                             type="button"
                             onClick={resetForm}
-                            className="btn btn-danger"
+                            className="btn btn-cancel"
                         >
                             Cancel
                         </button>
                     </div>
+                    <Modal
+                        isShowing={isShowing}
+                        hide={toggle}
+                        title="Employe(e)s Created"
+                        keydown={{ active: true, key: 'Escape' }}
+                    />
                 </Form>
             )}
         </Formik>
