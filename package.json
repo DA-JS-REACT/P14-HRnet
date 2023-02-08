@@ -5,7 +5,7 @@
         "email": "magione1004@gmail.com"
     },
     "version": "0.1.0",
-    "private": true,
+    "private": false,
     "homepage": "https://da-js-react.github.io/P14-HRnet/",
     "dependencies": {
         "@craco/craco": "^7.0.0",
