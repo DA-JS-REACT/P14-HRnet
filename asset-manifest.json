@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/P14-HRnet/static/css/main.88a0b41a.css",
+    "main.js": "/P14-HRnet/static/js/main.dfcd19a9.js",
+    "static/js/787.61c1c957.chunk.js": "/P14-HRnet/static/js/787.61c1c957.chunk.js",
+    "static/media/logo.png": "/P14-HRnet/static/media/logo.64bde18835acb6432d8c.png",
+    "index.html": "/P14-HRnet/index.html",
+    "main.88a0b41a.css.map": "/P14-HRnet/static/css/main.88a0b41a.css.map",
+    "main.dfcd19a9.js.map": "/P14-HRnet/static/js/main.dfcd19a9.js.map",
+    "787.61c1c957.chunk.js.map": "/P14-HRnet/static/js/787.61c1c957.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88a0b41a.css",
+    "static/js/main.dfcd19a9.js"
+  ]
+}
