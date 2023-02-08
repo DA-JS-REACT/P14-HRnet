@@ -3,10 +3,10 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getEmployees } from '@/_services/employees.action'
 import { selectEmployees } from '@/_helpers/selectors'
-import { CurrentTable } from '../Components/CurrentTable'
-import { isEmpty } from '../_helpers/Empty'
-import { Error } from '../Components/Error'
-import { Loader } from '../Components/Loader'
+import { CurrentTable } from '@/Components/CurrentTable'
+import { isEmpty } from '@/_helpers/Empty'
+import { Error } from '@/Components/Error'
+import { Loader } from '@/Components/Loader'
 
 /**
  * Employees Page

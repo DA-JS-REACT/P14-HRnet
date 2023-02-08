@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { Axios } from './caller.services'
+import { Axios } from '@/_services/caller.services'
 /**
  * Call async Api  for employees 's list
  * @function

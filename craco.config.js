@@ -5,12 +5,5 @@ module.exports = {
         alias: {
             "@": path.resolve(__dirname, "src"),
         },
-        plugins: {
-            add: [
-                new webpack.DefinePlugin({
-                    "process.env.NODE_ENV": JSON.stringify("production"),
-                }),
-            ],
-        },
     },
 }

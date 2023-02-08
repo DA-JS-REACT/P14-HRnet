@@ -12,7 +12,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 
 import PropTypes from 'prop-types'
 import { DefaultChevron } from './DefaultChevron'
-import { isEmpty } from '../_helpers/Empty'
+
 /**
  * Table dor display current employees
  * @prop {array} nodes - data which receive  to the server

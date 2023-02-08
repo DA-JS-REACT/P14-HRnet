@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { pathApi } from './.env.config'
+import { pathApi } from '@/_services/.env.config'
 
 // import { pathApi } from './env.config'
 

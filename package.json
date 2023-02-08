@@ -9,7 +9,7 @@
     "dependencies": {
         "@craco/craco": "^7.0.0",
         "@emotion/react": "^11.10.5",
-        "@fredmagione/modals-react-components": "^0.1.4",
+        "@fredmagione/modals-react-components": "^0.1.5",
         "@reduxjs/toolkit": "^1.9.1",
         "@table-library/react-table-library": "^4.0.23",
         "@testing-library/jest-dom": "^5.16.5",
@@ -17,6 +17,7 @@
         "@testing-library/user-event": "^13.5.0",
         "axios": "^1.2.4",
         "babel-jest": "^29.3.1",
+        "dotenv": "^16.0.3",
         "formik": "^2.2.9",
         "json-server": "^0.17.1",
         "react": "^18.2.0",

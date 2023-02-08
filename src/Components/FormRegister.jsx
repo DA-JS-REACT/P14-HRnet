@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { employeesRegister } from '@/_services/employees.action'
 import { MyDatePicker } from './MyDatePicker'
 import { Modal, useModal } from '@fredmagione/modals-react-components'
+import { MessageModal } from '@/Components/MessageModal'
 
 export function FormRegister() {
     const { isShowing, toggle } = useModal()
@@ -95,7 +96,9 @@ export function FormRegister() {
                     <Modal
                         isShowing={isShowing}
                         hide={toggle}
-                        title="Employe(e)s Created"
+                        title={
+                            <MessageModal message="Employe(e)s Created !! " />
+                        }
                         keydown={{ active: true, key: 'Escape' }}
                     />
                 </Form>
