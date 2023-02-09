@@ -11,7 +11,7 @@ import {
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 
 import PropTypes from 'prop-types'
-import { DefaultChevron } from './DefaultChevron'
+import { DefaultChevron } from '@/Components/DefaultChevron'
 
 /**
  * Table dor display current employees

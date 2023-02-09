@@ -1,20 +1,20 @@
-@import './Base/reset';
-@import './Utils/variables';
-@import './Base/base';
+@import '@/styles/Base/reset';
+@import '@/styles/Utils/variables';
+@import '@/styles/Base/base';
 
-@import './Components/btn';
-@import './Components/logo';
+@import '@/styles/Components/btn';
+@import '@/styles/Components/logo';
 
-@import './Layout/layout';
-@import './Layout/header';
-@import './Layout/banner';
-@import './Layout/form';
-@import './Layout/tableEmployees';
-@import './Layout/defaultChevron';
-@import './Layout/loader';
-@import './Layout/error';
-@import './Layout/footer';
-@import './Layout/message';
+@import '@/styles/Layout/layout';
+@import '@/styles/Layout/header';
+@import '@/styles/Layout/banner';
+@import '@/styles/Layout/form';
+@import '@/styles/Layout/tableEmployees';
+@import '@/styles/Layout/defaultChevron';
+@import '@/styles/Layout/loader';
+@import '@/styles/Layout/error';
+@import '@/styles/Layout/footer';
+@import '@/styles/Layout/message';
 
-@import './Pages/home';
-@import './Pages/employees';
+@import '@/styles/Pages/home';
+@import '@/styles/Pages/employees';
