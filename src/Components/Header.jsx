@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '@/Assets/logo.png'
+import logo from '@/Assets/logo2.png'
 import { Link, useLocation } from 'react-router-dom'
 
 /**

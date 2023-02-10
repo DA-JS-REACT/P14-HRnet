@@ -20,7 +20,8 @@
             color: red;
         }
         &-address {
-            border: 1px solid black;
+            border: 1px solid $color-secondary;
+            border-radius: 5px;
             padding: 5px 15px 0;
             width: 95%;
 
@@ -32,15 +33,25 @@
             flex-direction: row;
             justify-content: center;
             .btn {
+                cursor: pointer;
                 color: #fff;
                 width: 50%;
+                border: 1px solid transparent;
                 border-radius: 15px;
+                box-shadow: 2px 2px 2px #1b43325b;
+                font-size: 0.9rem;
                 &-save {
-                    background: $color-2;
+                    background: $color-btn-save;
                 }
                 &-cancel {
-                    background: $color-6;
+                    background: $color-btn-cancel;
                 }
+            }
+            .btn:active {
+                transform: translateY(1px);
+            }
+            .btn:hover {
+                transform: translateY(1px);
             }
         }
     }

@@ -8,14 +8,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $color-4;
+    background-color: $color-primary;
     &-form {
         margin-top: 20px;
         padding: 10px 5px;
         width: 20%;
-        border: 1px solid grey;
+        border: 1px solid $color-secondary;
         border-radius: 20px;
-        box-shadow: 2px 2px rgba(128, 128, 128, 0.541);
-        background-color: $color-logo;
+        box-shadow: 2px 2px 2px #1b43325b;
+        background-color: $color-fourth;
     }
 }

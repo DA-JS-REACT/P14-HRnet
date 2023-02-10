@@ -41,7 +41,7 @@ export function CurrentTable({ nodes }) {
         `,
             Row: `
           &:nth-of-type(odd) {
-            background-color: #f2f5e2;
+            background-color: #d8f3dc;
           }
           &:nth-of-type(even) {
             background-color: white;
