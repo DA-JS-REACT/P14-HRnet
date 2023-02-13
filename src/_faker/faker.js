@@ -2,6 +2,11 @@ import { faker } from '@faker-js/faker/locale/en_US'
 import { departmentField } from '../Data/data'
 import { Axios } from '../_services/caller.services'
 
+import { Database } from '../Data/Database'
+import { getFirestore, collection, addDoc } from 'firebase/firestore/lite'
+import { clearConfigCache } from 'prettier'
+import { clearParseAndGenerateServicesCalls } from '@typescript-eslint/typescript-estree/dist/parser'
+
 export function getFakeData() {
     let data = []
 
@@ -40,7 +45,7 @@ export function getFakeData() {
             department: randomDepartment,
         })
     }
-
+    console.log('faker', data)
     return data
 }
 
@@ -63,3 +68,11 @@ function random(min, max) {
 
 // remove comment
 // getData()
+
+// const db = getFirestore(Database)
+// export async function createEmployees(db) {
+//     const employeesCol = collection(db, 'employees')
+//     const employeeSnapshot = await addDoc(employeesCol, getFakeData())
+
+//     return employeeSnapshot
+// }

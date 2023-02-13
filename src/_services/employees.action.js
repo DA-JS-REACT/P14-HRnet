@@ -1,15 +1,22 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { Axios } from '@/_services/caller.services'
+import { Database } from '../Data/Database'
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
 /**
  * Call async Api  for employees 's list
  * @function
  * @returns {Promise.<Void>}
  */
 export const getEmployees = createAsyncThunk('getEmployees', async () => {
+    const db = getFirestore(Database)
     try {
-        const { data } = await Axios.get('/employees')
-
-        return data
+        const employeesCol = collection(db, 'employees')
+        const employeeSnapshot = await getDocs(employeesCol)
+        const employeeList = employeeSnapshot.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+        }))
+        return employeeList
     } catch (error) {
         console.log(error)
         throw new Error(error.message)
