@@ -66,3 +66,22 @@
 .table {
     width: 100%;
 }
+@media all and (min-width: 768px) and (max-width: 1079px) {
+    .th {
+        font-size: 14px;
+    }
+    .td {
+        font-size: 13px;
+    }
+}
+
+@media all and (min-width: 1080px) and (max-width: 1310px) {
+    .table {
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    .th {
+        font-size: 16px;
+    }
+}

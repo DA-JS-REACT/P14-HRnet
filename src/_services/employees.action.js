@@ -1,14 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { Axios } from '@/_services/caller.services'
 import { Database } from '../Data/Database'
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    addDoc,
+} from 'firebase/firestore/lite'
+
+const db = getFirestore(Database)
 /**
  * Call async Api  for employees 's list
  * @function
  * @returns {Promise.<Void>}
  */
 export const getEmployees = createAsyncThunk('getEmployees', async () => {
-    const db = getFirestore(Database)
     try {
         const employeesCol = collection(db, 'employees')
         const employeeSnapshot = await getDocs(employeesCol)
@@ -32,16 +38,19 @@ export const employeesRegister = createAsyncThunk(
     '/createEmployees',
     async (dataRegister, { rejectWithValue }) => {
         try {
-            const { data } = await Axios.post('/employees', dataRegister)
+            const employeesCollection = collection(db, 'employees')
+            const employeesRef = await addDoc(employeesCollection, dataRegister)
 
-            return data
+            return employeesRef
         } catch (error) {
             console.log(error.message)
             // return custom error message from API if any
             if (error.response && error.response.data.message) {
                 return rejectWithValue(error.response.data.message)
             } else {
-                return rejectWithValue(error.message)
+                return rejectWithValue(
+                    "Une erreur s'est produite lors de l'enregistrement des employés."
+                )
             }
         }
     }

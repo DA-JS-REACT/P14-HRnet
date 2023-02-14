@@ -15,17 +15,18 @@ import { Loader } from '@/Components/Loader'
 export function Employees() {
     const dispatch = useDispatch()
     const employees = useSelector(selectEmployees)
+
     const flag = useRef(false)
-    // if (!isEmpty(employees)) {
-    //     console.log('employees', employees)
-    // }
+    if (!isEmpty(employees)) {
+        console.log('employees', employees)
+    }
 
     useEffect(() => {
         if (flag.current === false) {
             dispatch(getEmployees())
         }
         return () => (flag.current = true)
-    }, [employees])
+    }, [])
     return (
         <section className="Employees">
             {!isEmpty(employees) && employees.loading ? (
@@ -33,7 +34,7 @@ export function Employees() {
             ) : !isEmpty(employees.employeesInfo) ? (
                 <CurrentTable nodes={employees.employeesInfo} />
             ) : (
-                <Error status="500" message={employees.error.error.message} />
+                <Error status="500" message="{employees.error.error.message}" />
             )}
         </section>
     )

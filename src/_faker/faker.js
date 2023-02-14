@@ -3,14 +3,13 @@ import { departmentField } from '../Data/data'
 import { Axios } from '../_services/caller.services'
 
 import { Database } from '../Data/Database'
-import { getFirestore, collection, addDoc } from 'firebase/firestore/lite'
-import { clearConfigCache } from 'prettier'
-import { clearParseAndGenerateServicesCalls } from '@typescript-eslint/typescript-estree/dist/parser'
+import { collection, addDoc } from 'firebase/firestore'
+import { getFirestore } from 'firebase/firestore'
 
 export function getFakeData() {
     let data = []
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 50; i++) {
         const id = i + 1
         const randomFirstName = faker.name.firstName({ sex: 'female' | 'male' })
         const randomLastName = faker.name.lastName()
@@ -26,12 +25,15 @@ export function getFakeData() {
         const randomStreet = faker.address.street()
         const randomCity = faker.address.cityName()
         const randomState = faker.address.state()
+
+        // for project with queries
+        // const randomState = faker.address.stateAbbr()
+        // const randomZipCode = faker.address.zipCode('#####')
         const randomZipCode = faker.address.zipCode()
         // use data  to the form Register
         const randomDepartment =
             departmentField[random(0, departmentField.length - 1)].name
         data.push({
-            id: id,
             firstName: randomFirstName,
             lastName: randomLastName,
             birthdate: randomBirthDate.toLocaleDateString('en-US'),
@@ -42,6 +44,7 @@ export function getFakeData() {
                 state: randomState,
                 zipCode: randomZipCode,
             },
+
             department: randomDepartment,
         })
     }
@@ -70,9 +73,15 @@ function random(min, max) {
 // getData()
 
 // const db = getFirestore(Database)
-// export async function createEmployees(db) {
-//     const employeesCol = collection(db, 'employees')
-//     const employeeSnapshot = await addDoc(employeesCol, getFakeData())
+export async function createEmployees(db) {
+    const employeesCollection = collection(db, 'employees')
+    const data = getFakeData()
+    let employeesRef = {}
+    for (let i = 0; i < data.length; i++) {
+        employeesRef = await addDoc(employeesCollection, data[i])
+    }
 
-//     return employeeSnapshot
-// }
+    return employeesRef
+}
+
+// createEmployees(db)
