@@ -34,7 +34,7 @@ export function Employees() {
             ) : !isEmpty(employees.employeesInfo) ? (
                 <CurrentTable nodes={employees.employeesInfo} />
             ) : (
-                <Error status="500" message="{employees.error.error.message}" />
+                <Error status="500" message="the employee list is empty" />
             )}
         </section>
     )

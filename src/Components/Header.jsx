@@ -19,12 +19,12 @@ export function Header() {
                     <h1 className="title">HRnet</h1>
                 </div>
                 <div className="contain-link">
-                    {location.pathname === '/employees' ? (
-                        <Link className="link" to="/">
+                    {location.pathname === '/P14-HRnet/employees' ? (
+                        <Link className="link" to="/P14-HRnet">
                             Home
                         </Link>
                     ) : (
-                        <Link className="link" to="/employees">
+                        <Link className="link" to="P14-HRnet/employees">
                             Employees
                         </Link>
                     )}

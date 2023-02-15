@@ -13,8 +13,8 @@ export function Navigation() {
         <Routes>
             <Route element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path="/" element={<Home />} />
-                <Route path="/employees" element={<Employees />} />
+                <Route path="/P14-HRnet/" element={<Home />} />
+                <Route path="P14-HRnet/employees" element={<Employees />} />
             </Route>
             <Route path="*" element={<Error404 />} />
         </Routes>

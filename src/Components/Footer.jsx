@@ -3,8 +3,11 @@ import logo from '@/Assets/logo1.png'
 
 export function Footer() {
     return (
-        <footer className="Footer">
-            <section>
+        <footer className="footer">
+            <section className="footer-copyright">
+                <p>Copyright © 2023</p>
+            </section>
+            <section className="footer-logo">
                 <img className="logo" src={logo} alt="logo Wealth Health" />
             </section>
         </footer>

@@ -11,7 +11,7 @@ export function Error404() {
                 </p>
             </div>
             <div className="Error-link">
-                <Link to="/">Retour à la page d'acceuil</Link>
+                <Link to="/P14-HRnet">Retour à la page d'acceuil</Link>
             </div>
         </section>
     )

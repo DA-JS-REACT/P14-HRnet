@@ -1,7 +1,31 @@
-.Footer {
-    // position: absolute;
-    // bottom: 0;
+.footer {
     display: flex;
-    justify-content: center;
-    padding: 5px;
+    flex-direction: row;
+
+    padding: 20px;
+    &-copyright {
+        width: 46%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-copyright > p {
+        font-size: 1rem;
+    }
+    &-logo {
+        width: 50%;
+        padding-left: 25px;
+    }
+    &-logo > img:hover {
+        transform-origin: center;
+        -webkit-animation: spin 4s linear infinite;
+        -moz-animation: spin 4s linear infinite;
+        animation: spin 4s linear infinite;
+    }
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
