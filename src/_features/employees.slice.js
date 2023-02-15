@@ -23,7 +23,6 @@ export const employeesSlice = createSlice({
                 state.error = null
             })
             .addCase(getEmployees.rejected, (state, payload) => {
-                console.log(payload)
                 state.loading = false
                 state.error = payload
             })
@@ -32,22 +31,26 @@ export const employeesSlice = createSlice({
                 state.error = null
             })
             .addCase(employeesRegister.fulfilled, (state, action) => {
+                console.log('employees', state.employeesInfo)
+                console.log('action', action.meta)
                 state.loading = false
                 state.error = null
-                state.employeesInfo = {
+                state.employeesInfo = [
                     ...state.employeesInfo,
-                    firstName: action.meta.arg.firstName,
-                    lastName: action.meta.arg.lastName,
-                    birthdate: action.meta.arg.birthdate,
-                    startdate: action.meta.arg.startdate,
-                    address: {
-                        street: action.meta.arg.address.street,
-                        city: action.meta.arg.address.city,
-                        state: action.meta.arg.address.state,
-                        zipCode: action.meta.arg.address.zipCode,
+                    {
+                        firstName: action.meta.arg.firstName,
+                        lastName: action.meta.arg.lastName,
+                        birthdate: action.meta.arg.birthdate,
+                        startdate: action.meta.arg.startdate,
+                        address: {
+                            street: action.meta.arg.address.street,
+                            city: action.meta.arg.address.city,
+                            state: action.meta.arg.address.state,
+                            zipCode: action.meta.arg.address.zipCode,
+                        },
+                        department: action.meta.arg.department,
                     },
-                    department: action.meta.arg.department,
-                }
+                ]
             })
             .addCase(employeesRegister.rejected, (state, action) => {
                 state.loading = false

@@ -91,8 +91,6 @@ export function CurrentTable({ nodes }) {
     // config to display the number of items per page
     const sizes = [10, 20, 50]
 
-    const resize = { resizerWidth: 25 }
-
     // ? may be util or not
     function onPaginationChange(action, state) {
         console.log(action, state)

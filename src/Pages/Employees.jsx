@@ -17,9 +17,9 @@ export function Employees() {
     const employees = useSelector(selectEmployees)
 
     const flag = useRef(false)
-    if (!isEmpty(employees)) {
-        console.log('employees', employees)
-    }
+    // if (!isEmpty(employees)) {
+    //     console.log('employees', employees)
+    // }
 
     useEffect(() => {
         if (flag.current === false) {
