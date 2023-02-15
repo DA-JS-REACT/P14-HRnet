@@ -6,6 +6,7 @@ import { SelectState } from '@/Components/SelectState'
 import { SelectDepartment } from '@/Components/SelectDepartment'
 import { useDispatch } from 'react-redux'
 import { employeesRegister } from '@/_services/employees.action'
+import { getEmployees } from '@/_services/employees.action'
 import { MyDatePicker } from '@/Components/MyDatePicker'
 import { Modal, useModal } from '@fredmagione/modals-react-components'
 import { MessageModal } from '@/Components/MessageModal'
@@ -30,6 +31,7 @@ export function FormRegister() {
         dispatch(employeesRegister(values))
         resetForm()
         toggle()
+        dispatch(getEmployees())
     }
     return (
         <Formik

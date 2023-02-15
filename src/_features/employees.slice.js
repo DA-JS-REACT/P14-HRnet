@@ -3,7 +3,7 @@ import { getEmployees, employeesRegister } from '@/_services/employees.action'
 
 const initialState = {
     loading: true,
-    employeesInfo: {},
+    employeesInfo: [],
     error: null,
 }
 
@@ -31,25 +31,30 @@ export const employeesSlice = createSlice({
                 state.error = null
             })
             .addCase(employeesRegister.fulfilled, (state, action) => {
+                console.log('employees', state.employeesInfo)
+                console.log('action', action.meta)
                 state.loading = false
                 state.error = null
-                state.employeesInfo.push({
-                    firstName: action.payload.firstName,
-                    lastName: action.payload.lastName,
-                    birthdate: action.payload.birthdate,
-                    startdate: action.payload.startdate,
-                    address: {
-                        street: action.payload.address.street,
-                        city: action.payload.address.city,
-                        state: action.payload.address.state,
-                        zipCode: action.payload.address.zipCode,
+                state.employeesInfo = [
+                    ...state.employeesInfo,
+                    {
+                        firstName: action.meta.arg.firstName,
+                        lastName: action.meta.arg.lastName,
+                        birthdate: action.meta.arg.birthdate,
+                        startdate: action.meta.arg.startdate,
+                        address: {
+                            street: action.meta.arg.address.street,
+                            city: action.meta.arg.address.city,
+                            state: action.meta.arg.address.state,
+                            zipCode: action.meta.arg.address.zipCode,
+                        },
+                        department: action.meta.arg.department,
                     },
-                    department: action.payload.department,
-                })
+                ]
             })
-            .addCase(employeesRegister.rejected, (state, payload) => {
+            .addCase(employeesRegister.rejected, (state, action) => {
                 state.loading = false
-                state.error = payload
+                state.error = action.payload
             })
     },
 })

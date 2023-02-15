@@ -41,7 +41,7 @@ export function CurrentTable({ nodes }) {
         `,
             Row: `
           &:nth-of-type(odd) {
-            background-color: #f2f5e2;
+            background-color: #d8f3dc;
           }
           &:nth-of-type(even) {
             background-color: white;
@@ -165,46 +165,55 @@ export function CurrentTable({ nodes }) {
         {
             label: 'First Name',
             renderCell: (item) => item.firstName,
+            resize: true,
             sort: { sortKey: 'FIRSTNAME' },
         },
         {
             label: 'Last Name',
             renderCell: (item) => item.lastName,
+            resize: true,
             sort: { sortKey: 'LASTNAME' },
         },
         {
             label: 'Start Date',
             renderCell: (item) => item.startdate,
+            resize: true,
             sort: { sortKey: 'STARTDATE' },
         },
         {
             label: 'Department',
             renderCell: (item) => item.department,
+            resize: true,
             sort: { sortKey: 'DEPARTMENT' },
         },
         {
             label: 'Date of birth',
             renderCell: (item) => item.birthdate,
+            resize: true,
             sort: { sortKey: 'DATEOFBIRTH' },
         },
         {
             label: 'Street',
             renderCell: (item) => item.address.street,
+            resize: true,
             sort: { sortKey: 'STREET' },
         },
         {
             label: 'City',
             renderCell: (item) => item.address.city,
+            resize: true,
             sort: { sortKey: 'CITY' },
         },
         {
             label: 'State',
             renderCell: (item) => item.address.state,
+            resize: true,
             sort: { sortKey: 'STATE' },
         },
         {
             label: 'Zip Code',
             renderCell: (item) => item.address.zipCode,
+            resize: true,
             sort: { sortKey: 'ZIPCODE' },
         },
     ]
