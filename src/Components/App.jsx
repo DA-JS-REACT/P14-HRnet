@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { Navigation } from '@/Components/Navigation'
 
 /**
@@ -9,9 +9,9 @@ import { Navigation } from '@/Components/Navigation'
 export function App() {
     return (
         <div className="App">
-            <BrowserRouter>
+            <HashRouter>
                 <Navigation />
-            </BrowserRouter>
+            </HashRouter>
         </div>
     )
 }
