@@ -19,3 +19,11 @@
         background-color: $color-fourth;
     }
 }
+
+@media all and (max-width: 1079px) {
+    .Home {
+        &-form {
+            width: 90%;
+        }
+    }
+}

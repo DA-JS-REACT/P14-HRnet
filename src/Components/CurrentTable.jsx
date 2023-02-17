@@ -25,14 +25,11 @@ export function CurrentTable({ nodes }) {
         {
             HeaderCell: `
             display:flex;
-            flex-direction: column;
-
             `,
 
             Cell: `
             padding:8px 16px;
             text-align:center;
-            color:black;
           `,
             HeaderRow: `
             font-weight: bold;
@@ -85,22 +82,22 @@ export function CurrentTable({ nodes }) {
             page: 0,
             size: 10,
         },
-        onChange: onPaginationChange,
+        // onChange: onPaginationChange,
     })
 
     // config to display the number of items per page
     const sizes = [10, 20, 50]
 
     // ? may be util or not
-    function onPaginationChange(action, state) {
-        console.log(action, state)
-    }
+    // function onPaginationChange(action, state) {
+    //     console.log(action, state)
+    // }
 
     // config function to sort columns
     const sort = useSort(
         data,
         {
-            onChange: onSortChange,
+            // onChange: onSortChange,
         },
         {
             sortIcon: {
@@ -156,64 +153,64 @@ export function CurrentTable({ nodes }) {
     )
 
     // ? may be util or not
-    function onSortChange(action, state) {
-        console.log(action, state)
-    }
+    // function onSortChange(action, state) {
+    //     console.log(action, state)
+    // }
 
     // Config  for display
     const COLUMNS = [
         {
             label: 'First Name',
             renderCell: (item) => item.firstName,
-            resize: true,
+
             sort: { sortKey: 'FIRSTNAME' },
         },
         {
             label: 'Last Name',
             renderCell: (item) => item.lastName,
-            resize: true,
+
             sort: { sortKey: 'LASTNAME' },
         },
         {
             label: 'Start Date',
             renderCell: (item) => item.startdate,
-            resize: true,
+
             sort: { sortKey: 'STARTDATE' },
         },
         {
             label: 'Department',
             renderCell: (item) => item.department,
-            resize: true,
+
             sort: { sortKey: 'DEPARTMENT' },
         },
         {
             label: 'Date of birth',
             renderCell: (item) => item.birthdate,
-            resize: true,
+
             sort: { sortKey: 'DATEOFBIRTH' },
         },
         {
             label: 'Street',
             renderCell: (item) => item.address.street,
-            resize: true,
+
             sort: { sortKey: 'STREET' },
         },
         {
             label: 'City',
             renderCell: (item) => item.address.city,
-            resize: true,
+
             sort: { sortKey: 'CITY' },
         },
         {
             label: 'State',
             renderCell: (item) => item.address.state,
-            resize: true,
+
             sort: { sortKey: 'STATE' },
         },
         {
             label: 'Zip Code',
             renderCell: (item) => item.address.zipCode,
-            resize: true,
+
             sort: { sortKey: 'ZIPCODE' },
         },
     ]

@@ -43,23 +43,25 @@ export function FormRegister() {
         >
             {({ resetForm }) => (
                 <Form className="form">
-                    <FieldCustom
-                        label="First Name"
-                        name="firstName"
-                        type="text"
-                    />
+                    <div className="form_responsive form_responsive--1">
+                        <FieldCustom
+                            label="First Name"
+                            name="firstName"
+                            type="text"
+                        />
 
-                    <FieldCustom
-                        label="Last Name"
-                        name="lastName"
-                        type="text"
-                    />
+                        <FieldCustom
+                            label="Last Name"
+                            name="lastName"
+                            type="text"
+                        />
 
-                    <MyDatePicker label="Date of Birth" name="birthdate" />
+                        <MyDatePicker label="Date of Birth" name="birthdate" />
 
-                    <MyDatePicker label="Start Date" name="startdate" />
+                        <MyDatePicker label="Start Date" name="startdate" />
+                    </div>
 
-                    <fieldset className="form-group-address">
+                    <fieldset className="form-group-address form_responsive form_responsive--2">
                         <legend>Address</legend>
                         <FieldCustom
                             label="Street"
@@ -81,9 +83,11 @@ export function FormRegister() {
                             type="string"
                         />
                     </fieldset>
-                    <SelectDepartment />
+                    <div className="form_responsive form_responsive--3">
+                        <SelectDepartment />
+                    </div>
 
-                    <div className="form-group form-group--btn">
+                    <div className="form-group form-group--btn form_responsive form_responsive--4">
                         <button type="submit" className="btn btn-save">
                             Save
                         </button>
