@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/P14-HRnet/static/css/main.f8eb5726.css",
-    "main.js": "/P14-HRnet/static/js/main.0476f743.js",
+    "main.js": "/P14-HRnet/static/js/main.ca961237.js",
     "static/js/787.61c1c957.chunk.js": "/P14-HRnet/static/js/787.61c1c957.chunk.js",
     "static/media/logo2.png": "/P14-HRnet/static/media/logo2.5e6c6f4d410d4a709b26.png",
     "static/media/logo1.png": "/P14-HRnet/static/media/logo1.6480f74de34f03cd80b0.png",
     "index.html": "/P14-HRnet/index.html",
     "main.f8eb5726.css.map": "/P14-HRnet/static/css/main.f8eb5726.css.map",
-    "main.0476f743.js.map": "/P14-HRnet/static/js/main.0476f743.js.map",
+    "main.ca961237.js.map": "/P14-HRnet/static/js/main.ca961237.js.map",
     "787.61c1c957.chunk.js.map": "/P14-HRnet/static/js/787.61c1c957.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f8eb5726.css",
-    "static/js/main.0476f743.js"
+    "static/js/main.ca961237.js"
   ]
 }
