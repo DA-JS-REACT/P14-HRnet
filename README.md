@@ -39,7 +39,9 @@ Conversion of a Back-Office of a financial company HRnet from JQuery to React
 ### Database
 
 -   <img src="https://img.shields.io/badge/Firebase-9.17.1-blue">
+
     For generating dummy data
+
 -   <img src="https://img.shields.io/badge/%40faker--js%2Ffaker-7.6.0-green">
 
 ## Starter Project
