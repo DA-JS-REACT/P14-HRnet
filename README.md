@@ -79,17 +79,21 @@ here is the link to the Git repository [repo](https://github.com/DA-JS-REACT/JQu
 for example:
 
 ```json
-employees : [ {
-      "firstName": "Rosalinda",
-      "lastName": "Lesch",
-      "dateOfBirth": "3/11/1970",
-      "startDate": "4/19/1979",
-      "street": "Marilou Viaduct",
-      "city": "Providence",
-      "state": "TN",
-      "zipCode": "94849",
-      "department": "Ressources"
-    },
+
+employees : [
+        {
+        "firstName": "Rosalinda",
+        "lastName": "Lesch",
+        "dateOfBirth": "3/11/1970",
+        "startDate": "4/19/1979",
+        "street": "Marilou Viaduct",
+        "city": "Providence",
+        "state": "TN",
+        "zipCode": "94849",
+        "department": "Ressources"
+        },
+
     // etc ...
     ]
+
 ```
