@@ -68,7 +68,7 @@ yarn run tostart
 
 this application works with the [@craco/craco](https://www.npmjs.com/package/@craco/craco) dependency, which is why the command `to run ` is different.
 
-or the online version with vercel [HRnet]()
+or the online version with gh-pages [HRnet](https://da-js-react.github.io/P14-HRnet/)
 
 ## JQuery repository
 
