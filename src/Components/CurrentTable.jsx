@@ -51,6 +51,7 @@ export function CurrentTable({ nodes }) {
     ])
     const handleSearch = (event) => {
         setSearch(event.target.value)
+        pagination.fns.onSetPage(0)
     }
 
     // Initialize Data  with function search
