@@ -8,7 +8,11 @@ export function Footer() {
                 <p>Copyright © 2023</p>
             </section>
             <section className="footer-logo">
-                <img className="logo" src={logo} alt="logo Wealth Health" />
+                <img
+                    className="logo logo-footer"
+                    src={logo}
+                    alt="logo Wealth Health"
+                />
             </section>
         </footer>
     )
