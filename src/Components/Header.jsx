@@ -16,7 +16,9 @@ export function Header() {
                     <img className="logo" src={logo} alt="logo Wealth Health" />
                 </div>
                 <div className="contain-title">
-                    <h1 className="title">HRnet</h1>
+                    <h1 role=" heading" className="title">
+                        HRnet
+                    </h1>
                 </div>
                 <div className="contain-link">
                     {location.pathname === '/P14-HRnet/employees' ? (

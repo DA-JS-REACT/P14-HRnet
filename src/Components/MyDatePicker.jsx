@@ -4,7 +4,12 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
-
+/**
+ *
+ * @param {string} label - the label of the field
+ * @param {string} name - for input id and error message
+ * @returns {React.ReactElement}
+ */
 export function MyDatePicker({ label, name }) {
     const [field, _meta, helpers] = useField(name)
     const [selected, setSelected] = useState(null)

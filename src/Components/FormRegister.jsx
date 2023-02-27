@@ -10,7 +10,10 @@ import { getEmployees } from '@/_services/employees.action'
 import { MyDatePicker } from '@/Components/MyDatePicker'
 import { Modal, useModal } from '@fredmagione/modals-react-components'
 import { MessageModal } from '@/Components/MessageModal'
-
+/**
+ *  form to register Employe(e)s
+ * @returns  {React.ReactElement}
+ */
 export function FormRegister() {
     const { isShowing, toggle } = useModal()
     const dispatch = useDispatch()
@@ -42,7 +45,7 @@ export function FormRegister() {
             }
         >
             {({ resetForm }) => (
-                <Form className="form">
+                <Form className="form" data-testid="register-form">
                     <div className="form_responsive form_responsive--1">
                         <FieldCustom
                             label="First Name"

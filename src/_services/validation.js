@@ -1,7 +1,9 @@
 import * as Yup from 'yup'
 
 const patternZipCode = /^[1-9]{5}([-][1-9]{4,5})?$/gim
-
+/**
+ * file to configure validation for te form to create emlpoyees
+ */
 export const validationSchema = Yup.object().shape({
     firstName: Yup.string()
         .min(3, 'too short')

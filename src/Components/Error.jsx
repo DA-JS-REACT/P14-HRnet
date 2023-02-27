@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 /**
- *
+ * Disply message error
  * @prop {string} status
  * @prop {string} message
  * @returns {React.ReactElement}

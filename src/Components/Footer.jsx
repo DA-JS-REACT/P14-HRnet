@@ -1,6 +1,9 @@
 import React from 'react'
 import logo from '@/Assets/logo1.png'
-
+/**
+ * Footer to the app
+ * @returns  {React.ReactElement}
+ */
 export function Footer() {
     return (
         <footer className="footer">

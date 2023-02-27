@@ -11,10 +11,3 @@ export const Axios = axios.create({
         'Content-Type': 'application/json',
     },
 })
-
-// // Intercepteur pour la mise en place du token dans la requête
-// Axios.interceptors.request.use((request) => {
-//     request.headers.Authorization = 'Bearer ' + accountService.getToken()
-
-//     return request
-// })

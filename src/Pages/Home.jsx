@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Banner } from '@/Components/Banner'
 import { FormRegister } from '@/Components/FormRegister'
+// For generate Faker Data
 // import { createEmployees } from '../_faker/faker'
 // import { getData } from '../_faker/faker'
 // import { Database } from '../Data/Database'
