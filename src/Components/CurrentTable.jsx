@@ -20,6 +20,7 @@ import { DefaultChevron } from '@/Components/DefaultChevron'
  */
 export function CurrentTable({ nodes }) {
     const [search, setSearch] = useState('')
+
     const theme = useTheme([
         getTheme(),
         {
@@ -91,7 +92,9 @@ export function CurrentTable({ nodes }) {
 
     // ? may be util or not
     // function onPaginationChange(action, state) {
-    //     console.log(action, state)
+    //     // console.log(action, state)
+    //     // console.log(state.size)
+    //     // pagination.fns.onSetSize(state.size)
     // }
 
     // config function to sort columns
@@ -222,7 +225,13 @@ export function CurrentTable({ nodes }) {
                 <div className="header-itemSize">
                     <label htmlFor="itemSize">Page Size:</label>
 
-                    <select name="itemSize" id="itemSize">
+                    <select
+                        name="itemSize"
+                        id="itemSize"
+                        onChange={(e) => {
+                            pagination.fns.onSetSize(e.target.value)
+                        }}
+                    >
                         {sizes.map((size) => (
                             <option
                                 key={size}
@@ -232,8 +241,8 @@ export function CurrentTable({ nodes }) {
                                             ? 'bold'
                                             : 'normal',
                                 }}
-                                onClick={() => pagination.fns.onSetSize(size)}
-                                value=""
+                                // onClick={() => pagination.fns.onSetSize(size)}
+                                value={size}
                             >
                                 {size}
                             </option>
